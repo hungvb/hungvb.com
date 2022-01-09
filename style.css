@@ -1,114 +1,150 @@
-/* Import Google Font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Import Google font - Poppins & Noto */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 body{
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #5372F0;
+  background: #7D2AE8;
 }
-.wrapper{
-  width: 605px;
+::selection{
+  color: #fff;
+  background: #7D2AE8;
+}
+form{
+  width: 450px;
   background: #fff;
-  border-radius: 15px;
-  padding: 30px 30px 25px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+  padding: 30px ;
+  border-radius: 5px;
+  box-shadow: 10px 10px 13px rgba(0,0,0,0.1);
 }
-header, .content :where(i, p, span){
-  color: #202842;
-}
-.wrapper header{
-  font-size: 35px;
-  font-weight: 600;
+form header{
   text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #7D2AE8;
 }
-.wrapper .content{
-  margin: 35px 0;
+form .url-input{
+  margin: 30px 0;
 }
-.content .quote-area{
-  display: flex;
-  justify-content: center;
-}
-.quote-area i{
-  font-size: 15px;
-}
-.quote-area i:first-child{
-  margin: 3px 10px 0 0;
-}
-.quote-area i:last-child{
-  display: flex;
-  margin: 0 0 3px 10px;
-  align-items: flex-end;
-}
-.quote-area .quote{
-  font-size: 22px;
-  text-align: center;
-  word-break: break-all;
-}
-.content .author{
-  display: flex;
+.url-input .title{
   font-size: 18px;
-  margin-top: 20px;
-  font-style: italic;
-  justify-content: flex-end;
+  color: #373737;
 }
-.author span:first-child{
-  margin: -7px 5px 0 0;
-  font-family: monospace;
+.url-input .field{
+  margin-top: 5px;
+  height: 50px;
+  width: 100%;
+  position: relative;
 }
-.wrapper .buttons{
-  border-top: 1px solid #ccc;
+.url-input .field input{
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 15px;
+  font-size: 15px;
+  background: #F1F1F7;
+  border-bottom: 2px solid #ccc;
+  font-family: 'Noto Sans', sans-serif;
 }
-.buttons .features{
+.url-input .field input::placeholder{
+  color: #b3b3b3;
+}
+.url-input .field .bottom-line{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: #7D2AE8;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+.url-input .field input:focus ~ .bottom-line,
+.url-input .field input:valid ~ .bottom-line{
+  transform: scale(1);
+}
+form .preview-area{
+  border-radius: 5px;
+  height: 220px;
   display: flex;
-  margin-top: 20px;
-  align-items: center;
-  justify-content: space-between;
-}
-.features ul{
-  display: flex;
-}
-.features ul li{
-  margin: 0 5px;
-  height: 47px;
-  width: 47px;
-  display: flex;
-  cursor: pointer;
-  color: #5372F0;
-  list-style: none;
-  border-radius: 50%;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
-  border: 2px solid #5372F0;
-  transition: all 0.3s ease;
+  flex-direction: column;
+  border: 2px dashed #8e46ec;
 }
-.features ul li:first-child{
-  margin-left: 0;
-}
-ul li:is(:hover, .active){
-  color: #fff;
-  background: #5372F0;
-}
-ul .speech.active{
-  pointer-events: none;
-}
-.buttons button{
+.preview-area.active{
   border: none;
-  color: #fff;
-  outline: none;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 13px 22px;
-  border-radius: 30px;
-  background: #5372F0;
 }
-.buttons button.loading{
-  opacity: 0.7;
+.preview-area .thumbnail{
+  width: 100%;
+  display: none;
+  border-radius: 5px;
+}
+.preview-area.active .thumbnail{
+  display: block;
+}
+.preview-area.active .icon,
+.preview-area.active span{
+  display: none;
+}
+.preview-area .icon{
+  color: #8e46ec;
+  font-size: 80px;
+}
+.preview-area span{
+  color: #8e46ec;
+  margin-top: 25px;
+}
+form .download-btn{
+  color: #fff;
+  height: 53px;
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 30px 0 20px 0;
+  border-radius: 5px;
+  background: #7D2AE8;
   pointer-events: none;
+  transition: background 0.3s ease;
+}
+.download-btn:hover{
+  background: #6616d0;
+}
+@media screen and (max-width: 460px){
+  body{
+    padding: 0 20px;
+  }
+  form header{
+    font-size: 24px;
+  }
+  .url-input .field,
+  form .download-btn{
+    height: 45px;
+  }
+  form .download-btn{
+    font-size: 15px;
+  }
+  form .preview-area{
+    height: 130px;
+  }
+  .preview-area .icon{
+    font-size: 50px;
+  }
+  .preview-area span{
+    margin-top: 10px;
+    font-size: 12px;
+  }
 }

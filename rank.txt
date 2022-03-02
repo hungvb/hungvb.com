@@ -1,13 +1,1 @@
-15/09 : 850,933 rank viet nam : 7,191
-16/09 : 818,871 rank viet nam : 7,163
-17/09 : 790,293 rank viet nam : 6,968
-18/09 : 740,381 rank viet nam : 6,039
-19/09 : 704,107 rank viet nam : 5,474
-20/09 : 640,675 rank viet nam : 4,971
-21/09 : 622,830 rank viet nam : 4,844
-22/09 : 609,624 rank viet nam : 4,565
-23/09 : 610,858 rank viet nam : 4,590
-24/09 : 595,267 rank viet nam : 4,128
-25/09 : 595,267 rank viet nam : 4,128
-26/09 : 560,923 rank viet nam : 4,000
-27/09 : 552,417 rank viet nam : 3,845
+Hiện tại chương trình đang cập nhật dữ liệu sever nên sẽ có một số lỗi người dùng, mong mọi người thông cảm cho sự chậm trể này.
